@@ -3,7 +3,7 @@ html, body{
   font-family: 'Source Sans Pro', sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #f0f0eb;
+  background-color: #222;
   color: #FFF;
 }
 
@@ -393,8 +393,8 @@ text-decoration: none;
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin: 0;
   position: relative;
 }
@@ -443,31 +443,6 @@ text-decoration: none;
   margin-top: 6px;
 }
 
-.mini-nav{
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.mini-nav a{
-  color: #666;
-}
-
-.mini-nav ul{
-  padding: 0;
-  margin: 0;
-}
-
-.mini-nav li{
-  display: inline;
-}
-
-.divide{
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #ffe164;
-}
-
 /* PROFILE FORMS */
 
 .profile-form{
@@ -490,7 +465,7 @@ text-decoration: none;
   border: 2px solid #ECECEC;
 }
 
-.profile-form .form-group, textarea{
+.profile-form .form-group{
   margin-top: 30px;
 }
 
