@@ -39,7 +39,7 @@
 <!-- Add vendors or code will fail --> 
 <target name="vendors" depends="clean" description="Add Vendors">
 <exec executable="php" failonerror="true">
-    <arg value='/usr/local/bin/composer' />
+    <arg value='/usr/local/bin/composer/composer.phar' />
     <arg value='install' />
 </exec>
 </target>
