@@ -2,8 +2,9 @@
 <!-- Set some basic project information and targets -->
 <project name="Subspace Build Script" default="build">
 
-<target name="build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/>
-<target name="full-build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/>
+<target name="build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
+<target name="full-build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
+<target name="dev-build" depends="clean, prepare, composer.update, dbupdate, lint, phpunit"/>
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -51,7 +52,17 @@
   <echo message="Updating Composer ............................. [COMPLETE]" />
 </target>
 
-<target name="composer" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer update">
+<target name="composer.install" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer install">
+  <echo message="Running Composer .............................. [STARTED]" />
+  <exec executable="php">
+    <arg value="-dmemory_limit=1G"/>
+    <arg value="${location.composer}"/>
+    <arg value="install"/>
+  </exec>
+  <echo message="Running Composer .............................. [COMPLETE]" />
+</target>
+
+<target name="composer.update" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer update">
   <echo message="Running Composer .............................. [STARTED]" />
   <exec executable="php">
     <arg value="-dmemory_limit=1G"/>
