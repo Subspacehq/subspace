@@ -2,10 +2,13 @@
 <!-- Set some basic project information and targets -->
 <project name="Subspace Build Script" default="build">
 
-<target name="build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/> 
+<target name="build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/>
+
 
 <property environment="env"/>
-<property name="composer" value="${basedir}/vendor/bin/composer.phar"/>
+<property name="location.vendor" value="${basedir}/vendor"/>
+<property name="location.vendor.bin" value="${basedir}/vendor/bin"/>
+<property name="location.composer" value="${basedir}/vendor/bin/composer.phar"/>
 
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">
@@ -15,6 +18,11 @@
 
 <!-- Prepare for the new build --> 
  <target name="prepare" depends="clean" description="Prepare for build">
+  <echo message="Checking vendor directories all exist ......... [STARTED]" />
+  <mkdir dir="${location.vendor}"/>
+  <echo message="Vendor directory created ...................... [OK]" />
+  <mkdir dir="${location.vendor.bin}"/>
+  <echo message="Vendor Executable directory created ........... [OK]" />
   <echo message="Preparing for new build artefacts ............. [STARTED]" />
   <echo message="Preparing for new build artefacts ............. [COMPLETE]" />
  </target>
@@ -22,7 +30,7 @@
 <!-- Check to see if Composer is downloaded -->
 <target name="composer-check" depends="prepare">
   <echo message="Checking for presence of Composer file......... [STARTED]" />
-  <available file="${composer}" property="composer.present"/>
+  <available file="${location.composer}" property="composer.present"/>
   <echo message="Checking for presence of Composer file......... [COMPLETE]" />
   </target>
 
@@ -30,22 +38,23 @@
 <target name="composer-download" depends="composer-check" unless="composer.present">
   <echo message="Downloading Composer .......................... [STARTED]" />
   <property name="composer.noselfupdate" value="true"/>
-  <get src="https://getcomposer.org/composer.phar" dest="${composer}"/>
+  <get src="https://getcomposer.org/composer.phar" dest="${location.composer}"/>
   <echo message="Downloading Composer .......................... [COMPLETE]" />
 </target>
   
 <target name="composer-selfupdate" depends="composer-download" unless="composer.noselfupdate">
+  <echo message="Updating Composer ............................. [STARTED]" />
   <exec executable="php">
-    <arg value="${composer}"/>
+    <arg value="${location.composer}"/>
     <arg value="self-update"/>
-    <arg value="--quiet"/>
   </exec>
+  <echo message="Updating Composer ............................. [COMPLETE]" />
 </target>
 
 <target name="composer" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer update">
   <echo message="Running Composer .............................. [STARTED]" />
   <exec executable="php">
-    <arg value="${composer}"/>
+    <arg value="${location.composer}"/>
     <arg value="update"/>
   </exec>
   <echo message="Running Composer .............................. [COMPLETE]" />
