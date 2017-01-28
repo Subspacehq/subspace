@@ -1,6 +1,7 @@
 /app/config/parameters.yml
 /phpunit.xml
 /var/*
+/build/*
 !/var/cache
 /var/cache/*
 !var/cache/.gitkeep
