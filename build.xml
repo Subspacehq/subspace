@@ -3,7 +3,7 @@
 <project name="Subspace Build Script" default="build">
 
 <target name="build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/>
-
+<target name="full-build" depends="clean, prepare, composer, dbupdate, lint, phpunit"/>
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -54,6 +54,7 @@
 <target name="composer" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer update">
   <echo message="Running Composer .............................. [STARTED]" />
   <exec executable="php">
+    <arg value="-dmemory_limit=1G"/>
     <arg value="${location.composer}"/>
     <arg value="update"/>
   </exec>
