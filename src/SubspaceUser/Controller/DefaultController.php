@@ -14,14 +14,61 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
+        return $this->render('subspace-user/signup.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
 
+
+    /**
+     * Matches /locations exactly
+     *
+     * @Route("/locations")
+     */
+
     public function locationsAction(Request $request)
     {
-
+        return $this->render('subspace-user/locations.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
     }
 
+    /**
+     * Matches /tour exactly
+     *
+     * @Route("/tour")
+     */
+
+    public function tourAction(Request $request)
+    {
+        return $this->render('subspace-user/tour.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
+     * Matches /pricing exactly
+     *
+     * @Route("/pricing")
+     */
+
+    public function pricingAction(Request $request)
+    {
+        return $this->render('subspace-user/pricing.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
+     * Matches /login exactly
+     *
+     * @Route("/login")
+     */
+
+    public function loginAction(Request $request)
+    {
+        return $this->render('subspace-user/login.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
+    }
 }

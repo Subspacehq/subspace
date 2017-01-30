@@ -1,3 +1,23 @@
 app:
     resource: "@SubspaceUser/Controller/"
     type:     annotation
+
+locations:
+    path:      "/locations"
+    defaults:  { _controller: SubspaceUser:Default:locations }
+
+tour:
+    path:      "/tour"
+    defaults:  { _controller: SubspaceUser:Default:tour }
+
+pricing:
+    path:      "/pricing"
+    defaults:  { _controller: SubspaceUser:Default:pricing }
+
+login:
+    path:      "/login"
+    defaults:  { _controller: SubspaceUser:Default:login }
+
+login:
+    path:      "/signup"
+    defaults:  { _controller: SubspaceUser:Default:signup }
