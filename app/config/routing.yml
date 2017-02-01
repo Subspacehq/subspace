@@ -1,23 +1,23 @@
-app:
-    resource: "@SubspaceUser/Controller/"
-    type:     annotation
+root:
+    path:      "/"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:index }
 
 locations:
     path:      "/locations"
-    defaults:  { _controller: SubspaceUser:Default:locations }
+    defaults:  { _controller: SubspaceCustomerBundle:Default:locations }
 
 tour:
     path:      "/tour"
-    defaults:  { _controller: SubspaceUser:Default:tour }
+    defaults:  { _controller: SubspaceCustomerBundle:Default:tour }
 
 pricing:
     path:      "/pricing"
-    defaults:  { _controller: SubspaceUser:Default:pricing }
+    defaults:  { _controller: SubspaceCustomerBundle:Default:pricing }
 
 login:
     path:      "/login"
-    defaults:  { _controller: SubspaceUser:Default:login }
+    defaults:  { _controller: SubspaceCustomerBundle:Default:login }
 
-login:
+signup:
     path:      "/signup"
-    defaults:  { _controller: SubspaceUser:Default:signup }
+    defaults:  { _controller: SubspaceCustomerBundle:Default:signup }

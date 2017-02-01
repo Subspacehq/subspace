@@ -1,0 +1,37 @@
+{% extends '@SubspaceCustomerBundle/Resources/views/FrontEnd/default.html.twig' %}
+
+{% block title %}Sign-up Form{% endblock %}
+
+{% block mainContainer %}
+<!--- Register Twiglet -->
+<div class="register-form-container">
+    <div class="container">
+
+        <div class="register-form">
+
+                <h1>Get Started Today!</h1>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="first-name" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="last-name" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="Email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="Password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="Password" placeholder="Re-type Password">
+                </div>
+                <button type="submit" class="btn btn-sub">CREATE ACCOUNT</button>
+            </form>
+            <a href="login.php">Already have an account?</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,19 +1,25 @@
 <?php
 
-namespace SubspaceUser\Controller;
+namespace SubspaceUserBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
+        // Log that the controller has been loaded
+        $logger = $this->get('logger');
+        $this->logger->info('SUBSPACE: Loaded the index action from Default controller');
+
+        // Load the template
         return $this->render('subspace-user/signup.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);

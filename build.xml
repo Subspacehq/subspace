@@ -3,28 +3,34 @@
 <project name="Subspace Build Script" default="build">
 
 <target name="build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
-<target name="full-build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
-<target name="dev-build" depends="clean, prepare, composer.update, dbupdate, lint, phpunit"/>
+<target name="build-dev" depends="clean, prepare, composer.update, dbupdate, phpunit-dev"/>
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
 <property name="location.vendor.bin" value="${basedir}/vendor/bin"/>
 <property name="location.composer" value="${basedir}/vendor/bin/composer.phar"/>
+<property name="location.build" value="${basedir}/build"/>
+<property name="location.build.phpunit" value="${basedir}/build/phpunit"/>
 
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">
   <echo message="Clean-up of previous build artefacts .......... [STARTED]" />
+  <delete dir="${location.build.phpunit}"/>
+  <echo message="PHPUnit Directory deleted ..................... [OK]" />
   <echo message="Clean-up of previous build artefacts .......... [COMPLETE]" />
  </target>
 
 <!-- Prepare for the new build --> 
  <target name="prepare" depends="clean" description="Prepare for build">
-  <echo message="Checking vendor directories all exist ......... [STARTED]" />
+  <echo message="Preparing for new build artefacts ............. [STARTED]" />  
   <mkdir dir="${location.vendor}"/>
   <echo message="Vendor directory created ...................... [OK]" />
   <mkdir dir="${location.vendor.bin}"/>
   <echo message="Vendor Executable directory created ........... [OK]" />
-  <echo message="Preparing for new build artefacts ............. [STARTED]" />
+  <mkdir dir="${location.build}"/>
+  <echo message="Build directory created ....................... [OK]" />
+  <mkdir dir="${location.build.phpunit}"/>
+  <echo message="PHPUnit Test Output directory created ......... [OK]" />
   <echo message="Preparing for new build artefacts ............. [COMPLETE]" />
  </target>
 
@@ -62,7 +68,7 @@
   <echo message="Running Composer .............................. [COMPLETE]" />
 </target>
 
-<target name="composer.update" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer update">
+<target name="composer.update" description="Run composer update">
   <echo message="Running Composer .............................. [STARTED]" />
   <exec executable="php">
     <arg value="-dmemory_limit=1G"/>
@@ -114,7 +120,22 @@
   </condition>
   <echo message="Environment is ${os.name} therefore executable set to ${phpunit-executable}." />
   <exec dir="${basedir}" executable="${phpunit-executable}" failonerror="false" description="Run unit app with PHPUnit">
-  <arg line="--verbose" />   
+    <arg value="--verbose" /> 
+  </exec>
+  <echo message="Running PHPUnit ............................... [COMPLETE]" />
+ </target>
+
+  <target name="phpunit-dev">
+  <echo message="Running PHPUnit ............................... [STARTED]" />
+    <condition property="phpunit-executable" value="${basedir}/vendor/bin/phpunit.bat" else="${basedir}/vendor/bin/phpunit">
+    <and>
+      <os family="windows"/>
+    </and>
+  </condition>
+  <echo message="Environment is ${os.name} therefore executable set to ${phpunit-executable}." />
+  <exec dir="${basedir}" executable="${phpunit-executable}" failonerror="false" description="Run unit app with PHPUnit">
+    <arg value="--verbose" /> 
+    <arg value="--coverage-html=${location.build.phpunit}" />
   </exec>
   <echo message="Running PHPUnit ............................... [COMPLETE]" />
  </target>
