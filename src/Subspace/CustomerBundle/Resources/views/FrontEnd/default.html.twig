@@ -5,19 +5,23 @@
     <meta name="viewport" CONTENT="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="robots" CONTENT="index,follow"/>
 
-    <script src="https://use.fontawesome.com/af95f059e7.js"></script>
+    <!-- Latest compiled and minified JS from Assetic -->
+    {% javascripts '@SubspaceCustomerBundle/Resources/public/js/*' %}
+      <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 
     <!-- Latest compiled and minified CSS from Assetic -->
     {% stylesheets '@SubspaceCustomerBundle/Resources/public/css/*' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
-                    
+
+    <!-- Load fonts from external sources -->
+    <script src="https://use.fontawesome.com/af95f059e7.js"></script>              
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <!--- Header -->
-
  <div class="homepage-hero-module"  id="top">
     <!-- Header -->
     <div class="header-home">
