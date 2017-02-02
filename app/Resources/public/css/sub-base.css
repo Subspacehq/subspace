@@ -1,0 +1,172 @@
+html, body{
+  height: 100%;
+  background-color: #FFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #333;
+}
+
+/* ----- Header -----*/
+
+.header .navbar{
+  border-radius: 0;
+  background-color: #FFF;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header .navbar .navbar-brand{
+  letter-spacing: 1.4px;
+  font-weight: 600;
+}
+
+.header .navbar a{
+  color: #333;
+}
+
+.header .navbar a:hover{
+  color: #333;
+}
+
+.header .navbar li a{
+  color: #333;
+  letter-spacing: 1.4px;
+  font-weight: 400;
+}
+
+.header .navbar li a:hover{
+  color: #333;
+}
+
+.navbar-default .navbar-toggle{
+  border: none;
+  color: #FFF;
+}
+
+.navbar-default button{
+  color: #333;
+}
+
+
+/* ----- Login/Signup -----*/
+.sign-up-container{
+  margin-top: 100px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.login-container{
+  margin-top: 100px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+
+.form-back{
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #E4E6E9;
+  border-bottom: 3px solid #ECECEC;
+  text-align: center;
+}
+
+.form-title{
+  background-color: #fafaf5;
+  color: #1e2b3d;
+  border-bottom: 1px solid #ECECEC;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  padding: 20px 10px 20px 30px;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: left;
+}
+
+.form-horizontal .form-group{
+  margin-left: 0;
+  width: 100%;
+}
+
+.form-horizontal .input-group-addon{
+  background-color: transparent;
+  border: none;
+  color: #ECECEC;
+}
+
+.form-horizontal .form-underline{
+  border-bottom: 1px solid #ECECEC;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 15px;
+}
+
+.form-horizontal .control-label{
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+    width: 25%;
+    font-weight: 700;
+    color: #1e2b3d;
+    font-size: 15px;
+}
+
+.form-horizontal .input-group{
+    width:75%;
+    float: right;
+}
+
+.form-horizontal .form-control{
+  border:none;
+  box-shadow: none;
+  font-size: 15px;
+  color: #1e2b3d;
+}
+
+.fa-lock{
+  padding: 0 3px 0 2px;
+}
+
+.form-horizontal .checkbox{
+  text-align: left;
+  width: 60%;
+  margin: auto;
+  font-size: 12px;
+}
+
+.login-container .form-horizontal .checkbox{
+  text-align: center;
+}
+
+.btn-main{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: #f05f5a;
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #C24D49;
+  padding: 13px 0;
+  font-size: 17px;
+}
+
+.btn-main:hover{
+  color: #FFF;
+  background-color: #DE5853;
+  transition: background-color 0.5s ease;
+}
+
+.login-link{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-link a{
+  color: #333;
+  font-size: 12px;
+}
