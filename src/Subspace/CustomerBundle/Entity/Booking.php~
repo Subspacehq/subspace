@@ -1,0 +1,30 @@
+<?php 
+// src/Subspace/CustomerBundle/Entity/Booking.php
+
+namespace Subspace\CustomerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="bookings")
+*/
+class Booking
+{
+	/**
+	 * @ORM\Column(type="integer", unique=true)
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $Id;
+
+    /**  
+     * @ORM\Column(type="date")
+     */
+    private $TimeFrom;
+
+    /**  
+     * @ORM\Column(type="integer")
+     */
+    private $TimeUntil;
+}

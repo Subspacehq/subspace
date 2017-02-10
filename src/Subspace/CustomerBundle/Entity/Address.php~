@@ -1,0 +1,56 @@
+<?php 
+// src/Subspace/CustomerBundle/Entity/Address.php
+
+namespace Subspace\CustomerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="addresses")
+*/
+class Address
+{
+	/**
+	 * @ORM\Column(type="integer", unique=true)
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+    /**  
+     * @ORM\Column(type="integer")
+     */
+    private $HouseNumber;
+
+	/**	 
+	 * @ORM\Column(type="string")
+	 */
+	private $AddressLine1;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $AddressLine2;
+
+	/**	 
+	 * @ORM\Column(type="string")
+	 */
+	private $AddressLine3;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $City;
+
+	/**	 
+	 * @ORM\Column(type="string")
+	 */
+	private $Postcode;
+
+    /**
+     * Get id
+     *
+     * @return \intiger
+     */
+}

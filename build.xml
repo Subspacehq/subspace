@@ -2,7 +2,7 @@
 <!-- Set some basic project information and targets -->
 <project name="Subspace Build Script" default="build">
 
-<target name="build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
+<target name="build" depends="initial-checks, clean, prepare, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-dev" depends="clean, prepare, composer.update, dbupdate, phpunit-dev"/>
 
 <property environment="env"/>
@@ -11,6 +11,16 @@
 <property name="location.composer" value="${basedir}/vendor/bin/composer.phar"/>
 <property name="location.build" value="${basedir}/build"/>
 <property name="location.build.phpunit" value="${basedir}/build/phpunit"/>
+
+<!-- Begin file checks -->
+<target name="file-checks">
+   <available file="${location.vendor}"  property="property.newinstall"/>
+</target>
+
+<!-- Perform Install checks -->
+<target name="initial-checks" depends="file-checks">
+   <mkdir dir="${location.vendor}"/>
+</target>
 
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">

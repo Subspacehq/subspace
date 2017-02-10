@@ -26,8 +26,10 @@ class DefaultController extends Controller
 
     public function locationsAction(Request $request)
     {
+        $result = $this->get('Spaces.Helper')->loadSpaces();
+
         // Load the template
-        return $this->render('SubspaceCustomerBundle:FrontEnd:locations.html.twig');
+        return $this->render('SubspaceCustomerBundle:FrontEnd:locations.html.twig', array('locations' => $result));
     }
 
     /**

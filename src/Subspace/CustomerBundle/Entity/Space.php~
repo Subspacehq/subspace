@@ -1,0 +1,30 @@
+<?php 
+// src/Subspace/CustomerBundle/Entity/Space.php
+
+namespace Subspace\CustomerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="spaces")
+*/
+class Space
+{
+	/**
+	 * @ORM\Column(type="integer", unique=true)
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $Id;
+
+    /**  
+     * @ORM\Column(type="string")
+     */
+    private $Name;
+
+    /**  
+     * @ORM\Column(type="integer")
+     */
+    private $AddressId;
+}
