@@ -3,7 +3,9 @@
 <project name="Subspace Build Script" default="build">
 
 <target name="build" depends="initial-checks, clean, prepare, composer.install, dbupdate, lint, phpunit"/>
-<target name="build-dev" depends="clean, prepare, composer.update, dbupdate, phpunit-dev"/>
+<target name="build-dev" depends="initial-checks, clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
+<target name="build-local" depends="git-checkout, composer.install, dbupdate"/>
+<!-- <target name="build-local" depends="git-checkout, composer.update, dbupdate"/> -->
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -11,6 +13,15 @@
 <property name="location.composer" value="${basedir}/vendor/bin/composer.phar"/>
 <property name="location.build" value="${basedir}/build"/>
 <property name="location.build.phpunit" value="${basedir}/build/phpunit"/>
+
+<!-- Begin file checks -->
+<target name="git-checkout">
+   <echo message="Initiating Git checkout of latest code......... [STARTED]" />
+   <exec executable="git">
+    <arg value="checkout"/>
+   </exec>
+   <echo message="Git checkout complete.......................... [COMPLETE]" />
+</target>
 
 <!-- Begin file checks -->
 <target name="file-checks">
@@ -68,7 +79,7 @@
   <echo message="Updating Composer ............................. [COMPLETE]" />
 </target>
 
-<target name="composer.install" depends="composer-selfupdate" unless="composer.noupdate" description="Run composer install">
+<target name="composer.install" description="Run composer install">
   <echo message="Running Composer .............................. [STARTED]" />
   <exec executable="php">
     <arg value="-dmemory_limit=1G"/>
@@ -89,7 +100,7 @@
 </target>
 
 <!-- Run any DB schema updates --> 
-<target name="dbupdate" depends="clean" description="Update Schema">
+<target name="dbupdate" description="Update Schema">
   <echo message="Updating Database ............................. [STARTED]" />
   <exec executable="php" failonerror="true">
     <arg value='bin/console' />
