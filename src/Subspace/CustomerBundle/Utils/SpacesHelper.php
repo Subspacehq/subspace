@@ -4,14 +4,17 @@
 namespace Subspace\CustomerBundle\Utils;
 
 use Subspace\CustomerBundle\Entity\Space;
-use Symfony\Component\HttpFoundation\Response;
-use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
-class SpacesHelper
+class SpacesHelper extends Bundle
 {
 	public function loadSpaces($query="all")
 	{
-		//$locations = $this->get('doctrine')
+		self::$kernel->getContainer();
+		$locations = $this->get('doctrine');
 		//        ->getRepository('Subspace\CustomerBundle:Space')
 		//        ->findAll();
 		$locations = "Testing";

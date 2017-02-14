@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="spaces")
+ * @ORM\Entity(repositoryClass="Subspace\CustomerBundle\Repository\SpaceRepository")
 */
 class Space
 {
@@ -27,6 +28,11 @@ class Space
      * @ORM\Column(type="integer")
      */
     private $AddressId;
+
+    /**  
+     * @ORM\Column(type="text")
+     */
+    private $Description;
 
     /**
      * Get id
@@ -84,5 +90,29 @@ class Space
     public function getAddressId()
     {
         return $this->AddressId;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Space
+     */
+    public function setDescription($description)
+    {
+        $this->Description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->Description;
     }
 }

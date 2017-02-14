@@ -4,6 +4,7 @@
 namespace Subspace\CustomerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -11,12 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
 */
 class Address
 {
-	/**
+    /**
 	 * @ORM\Column(type="integer", unique=true)
 	 * @ORM\Id
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	private $id;
+	private $Id;
 
     /**  
      * @ORM\Column(type="integer")
@@ -47,6 +48,11 @@ class Address
 	 * @ORM\Column(type="string")
 	 */
 	private $Postcode;
+
+    /**  
+     * @ORM\Column(type="integer")
+     */
+    private $CountryId;
 
     /**
      * Get id
@@ -206,5 +212,63 @@ class Address
     public function getPostcode()
     {
         return $this->Postcode;
+    }
+
+    /**
+     * Add space
+     *
+     * @param \Subspace\CustomerBundle\Entity\Space $space
+     *
+     * @return Address
+     */
+    public function addSpace(\Subspace\CustomerBundle\Entity\Space $space)
+    {
+        $this->space[] = $space;
+
+        return $this;
+    }
+
+    /**
+     * Remove space
+     *
+     * @param \Subspace\CustomerBundle\Entity\Space $space
+     */
+    public function removeSpace(\Subspace\CustomerBundle\Entity\Space $space)
+    {
+        $this->space->removeElement($space);
+    }
+
+    /**
+     * Get space
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSpace()
+    {
+        return $this->space;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     *
+     * @return Address
+     */
+    public function setCountryId($countryId)
+    {
+        $this->CountryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer
+     */
+    public function getCountryId()
+    {
+        return $this->CountryId;
     }
 }

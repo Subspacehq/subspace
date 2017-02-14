@@ -5,6 +5,7 @@ namespace Subspace\CustomerBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Space;
 
 class DefaultController extends Controller
 {
@@ -26,10 +27,14 @@ class DefaultController extends Controller
 
     public function locationsAction(Request $request)
     {
-        $result = $this->get('Spaces.Helper')->loadSpaces();
+        $em = $this->getDoctrine()->getManager();
+
+        $SpaceRepository = $em->getRepository('SubspaceCustomerBundle:Space');
+
+        $spaces = $SpaceRepository->findAllSpaces(); 
 
         // Load the template
-        return $this->render('SubspaceCustomerBundle:FrontEnd:locations.html.twig', array('locations' => $result));
+        return $this->render('SubspaceCustomerBundle:FrontEnd:locations.html.twig', array('spaces' => $spaces));
     }
 
     /**
