@@ -1,0 +1,130 @@
+{% extends '@SubspaceCustomerBundle/Resources/views/FrontEnd/default.html.twig' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block mainContainer %}
+<!--- Dash Main --->
+
+<div class="account-main">
+  <div class="container">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 account-nav">
+      <ul>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="profile.php"><span class="active-link">Profile</span></a></li>
+        <li><a href="bookings.php">Bookings</a></li>
+        <li><a href="listings.php">Spaces</a></li>
+        <li><a href="messages.php">Messages</a></li>
+        <li><a href="settings.php">Settings</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+
+      <form class="form-horizontal">
+              <h2>Edit your Profile</h2>
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">Picture</label>
+					<div class="col-sm-10 form-width">
+						<div class="image-upload">
+								<label for="file-input">
+										<img src="../img/pro-pic.png"/>
+								</label>
+								<input id="file-input" type="file"/>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your First Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Last Name">
+          </div>
+        </div>
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Bio</label>
+          <div class="col-sm-10 form-width">
+            <textarea class="form-control" rows="3" placeholder="A brief description of why you use subspace"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-main">Save Profile</button>
+          </div>
+        </div>
+      </form>
+
+
+			<form class="form-horizontal">
+              <h2>Contact Preferences</h2>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10 form-width">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Phone Number</label>
+          <div class="col-sm-10 form-width">
+            <input type="tel" class="form-control" id="inputEmail3" placeholder="Enter your Phone Number">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-main">Save Prefernces</button>
+          </div>
+        </div>
+      </form>
+
+
+			<form class="form-horizontal">
+              <h2>Billing Address</h2>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Address Line 1</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Address Line 1">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Address Line 2</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Address Line 2">
+          </div>
+        </div>
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Town/City</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Town or City">
+          </div>
+        </div>
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">County/State</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your County or State">
+          </div>
+        </div>
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Country</label>
+          <div class="col-sm-10 form-width">
+						<select class="form-control">
+						  <option>United Kingdom</option>
+						  <option>United States</option>
+						  <option>Republic Of Ireland</option>
+						</select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-main">Save Address</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,7 +1,7 @@
 html, body{
   height: 100%;
   background-color: #FFF;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #333;
 }
 
@@ -29,8 +29,9 @@ html, body{
 
 .header .navbar li a{
   color: #333;
-  letter-spacing: 1.4px;
+  letter-spacing: 1px;
   font-weight: 400;
+  font-size: 12px;
 }
 
 .header .navbar li a:hover{
@@ -44,6 +45,11 @@ html, body{
 
 .navbar-default button{
   color: #333;
+}
+
+.account-link img{
+  max-height: 20px;
+  border-radius: 20px;
 }
 
 
@@ -85,25 +91,25 @@ html, body{
   text-align: left;
 }
 
-.form-horizontal .form-group{
+.user-form .form-group{
   margin-left: 0;
   width: 100%;
 }
 
-.form-horizontal .input-group-addon{
+.user-form .input-group-addon{
   background-color: transparent;
   border: none;
   color: #ECECEC;
 }
 
-.form-horizontal .form-underline{
+.user-form .form-underline{
   border-bottom: 1px solid #ECECEC;
   margin-left: -20px;
   margin-right: -20px;
   margin-bottom: 15px;
 }
 
-.form-horizontal .control-label{
+.user-form .control-label{
     padding-top: 7px;
     margin-bottom: 0;
     text-align: left;
@@ -113,30 +119,26 @@ html, body{
     font-size: 15px;
 }
 
-.form-horizontal .input-group{
+.user-form .input-group{
     width:75%;
     float: right;
 }
 
-.form-horizontal .form-control{
+.user-form .form-control{
   border:none;
   box-shadow: none;
   font-size: 15px;
   color: #1e2b3d;
 }
 
-.fa-lock{
-  padding: 0 3px 0 2px;
-}
-
-.form-horizontal .checkbox{
+.user-form .checkbox{
   text-align: left;
   width: 60%;
   margin: auto;
   font-size: 12px;
 }
 
-.login-container .form-horizontal .checkbox{
+.user-form .login-container .checkbox{
   text-align: center;
 }
 

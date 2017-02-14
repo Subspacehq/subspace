@@ -1,37 +1,63 @@
 {% extends '@SubspaceCustomerBundle/Resources/views/FrontEnd/default.html.twig' %}
 
-{% block title %}Sign-up Form{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block mainContainer %}
-<!--- Register Twiglet -->
-<div class="register-form-container">
+<!-- Sign Up Content -->
+  <div class="sign-up-container user-form">
     <div class="container">
-
-        <div class="register-form">
-
-                <h1>Get Started Today!</h1>
-
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="first-name" placeholder="First Name">
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 form-back">
+          <form class="form-horizontal form-margin">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="reg-firstname" placeholder="Enter your First Name" aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-check" aria-hidden="true"></i></span>
+              </div>
+            </div>
+						<div class="form-underline"></div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control"name="reg-lastname" placeholder="Enter your Last Name" aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-check" aria-hidden="true"></i></span>
+              </div>
+            </div>
+						<div class="form-underline"></div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="input-group">
+                <input type="email" class="form-control" name="reg-email" placeholder="Enter your Email" aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-check" aria-hidden="true"></i></span>
+              </div>
+            </div>
+						<div class="form-underline"></div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" name="reg-password" placeholder="Enter a Password" aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-check" aria-hidden="true"></i></span>
+              </div>
+            </div>
+						<div class="form-underline"></div>
+            <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" checked>I would like to recieve promotions and updates via email about Subspace and it's partners
+                  </label>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="last-name" placeholder="Last Name">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="Email" placeholder="Email Address">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="Password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="Password" placeholder="Re-type Password">
-                </div>
-                <button type="submit" class="btn btn-sub">CREATE ACCOUNT</button>
-            </form>
-            <a href="login.php">Already have an account?</a>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-main">Create Account</button>
+            </div>
+          </form>
+					<div class="login-link"><a href="login.php">Already have an Account?</a></div>
         </div>
-
+        <div class="col-lg-3"></div>
+      </div>
     </div>
-</div>
+  </div>
+<!-- /.Sign Up Content -->
 {% endblock %}
