@@ -1,0 +1,86 @@
+.account-main{
+  margin-top: 50px;
+}
+
+.account-nav ul{
+  padding: 0;
+  margin: 0;
+  margin-left: -15px
+}
+
+.account-nav li{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.account-nav li a{
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.active-link{
+  color: #f05f5a;
+  font-weight: 400;
+}
+
+.account-main .form-horizontal{
+  padding: 20px 50px 20px 20px;
+  margin-bottom: 50px;
+  border: 1px solid #ECECEC;
+  font-size: 13px;
+}
+
+.account-main .form-group{
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.account-main .form-control{
+  border: 1px solid #999;
+}
+
+.account-main .form-width{
+  width: 80%;
+}
+
+.account-main .control-label{
+  width: 20%;
+  text-align: right;
+}
+
+.account-main .btn-main{
+  float: right;
+  padding: 5px 10px;
+  font-size: 13px;
+  width: auto;
+}
+
+.form-horizontal h2{
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding: 10px 10px 30px 10px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.account-main .form-control::-moz-placeholder {
+  color: #333;
+}
+.account-main .form-control:-ms-input-placeholder {
+  color: #333;
+}
+.account-main .form-control::-webkit-input-placeholder {
+  color: #333;
+}
+
+.image-upload img{
+  height: 75px;
+}
+
+.image-upload > input
+{
+    display: none;
+}

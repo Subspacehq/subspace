@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}Subspace{% endblock %} | Subspace</title>
+    <title>{% block title %}Coworking, Office Sharing &amp; Hotdesk{% endblock %} | Subspace</title>
     <meta name="viewport" CONTENT="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="robots" CONTENT="index,follow"/>
 
@@ -16,88 +16,56 @@
     {% endstylesheets %}
 
     <!-- Load fonts from external sources -->
-    <script src="https://use.fontawesome.com/af95f059e7.js"></script>              
+    <script src="https://use.fontawesome.com/af95f059e7.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<!-- Header/Navbar -->
+<div class="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Left Hand Nav -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ path('root') }}">SUBSPACE</a>
+      </div>
+        <!-- Right Hand Nav -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+							<li><a href="{{ path('tour') }}">Discover</a></li>
+							<li><a href="{{ path('locations') }}">Spaces</a></li>
+              <li><a href="{{ path('login') }}">Login</a></li>
+							<li><a href="{{ path('root') }}">Sign Up</a></li>
 
-<!--- Header -->
- <div class="homepage-hero-module"  id="top">
-    <!-- Header -->
-    <div class="header-home">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- Left Hand Nav -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="index.php">SUBSPACE</a>
-            </div>
+							<li class="dropdown account-link">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="img/pro-pic.png" />  Hugh Crawford <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+									<li><a href="{{ path('root') }}">Dashboard</a></li>
+									<li><a href="{{ path('root') }}">Profile</a></li>
+									<li><a href="{{ path('root') }}">Bookings</a></li>
+									<li><a href="{{ path('root') }}">Messages</a></li>
+									<li><a href="{{ path('root') }}">Settings</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="{{ path('root') }}">Manage Spaces</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="{{ path('root') }}">Sign Out</a></li>
+			          </ul>
+			        </li>
+						</ul>
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+</div><!-- /.Header/Navbar -->
 
-            <!-- Right Hand Nav -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ path('locations') }}">LOCATIONS</a></li>
-                    <li><a href="{{ path('tour') }}">TOUR</a></li>
-                    <li><a href="{{ path('pricing') }}">PRICING</a></li>
-                    <li><a href="{{ path('login') }}">LOGIN</a></li>
-                    <li><a href="{{ path('root') }}"><span class="sign-up">SIGN UP</span></a></li>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-    </div>
-</div>
 
 {% block mainContainer %}{% endblock %}
 
-<div class="footer">
-  <div class="container">
 
-    <!--- Social Links -->
-    <div class="col-lg-3">
-      <ul class="social-links">
-        <label>Member</label>
-        <li><a href="#">Subscribe</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </div>
-
-    <div class="col-lg-3">
-      <ul class="social-links">
-        <label>Host</label>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Become a host</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
-
-    <!--- Legal Links -->
-    <div class="col-lg-3">
-      <ul class="legal-links">
-        <label>Legal</label>
-        <li><a href="terms.php">Terms &amp; Conditions</a></li>
-        <li><a href="privacy.php">Privacy Policy</a></li>
-      </ul>
-    </div>
-
-    <div class="col-lg-2"></div>
-
-    <div class="col-lg-1">
-      <ul class="top-link">
-        <li><a href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
 
 <!--- Javascipt -->
     <!--- Bootstrap -->
