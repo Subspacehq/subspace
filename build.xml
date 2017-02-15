@@ -105,7 +105,7 @@
   <exec executable="php" failonerror="true">
     <arg value='bin/console' />
       <arg value="doctrine:schema:update" />
-      <arg value='-n' />
+      <arg value='--force' />
   </exec>
   <echo message="Updating Database ............................. [COMPLETE]" />
 </target>
