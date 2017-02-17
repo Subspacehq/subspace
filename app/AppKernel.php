@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Subspace\CustomerBundle\SubspaceCustomerBundle(),
             #new Subspace\VenueBundle\VenueBundle(),
             #new Subspace\AdminBundle\AdminBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

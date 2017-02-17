@@ -34,7 +34,7 @@ class DefaultController extends Controller
             ->getForm();
 
         // Load the template
-        return $this->render('SubspaceCustomerBundle:FrontEnd:signup.html.twig', array('messages' => $this->NewMessages, 'form' => $form->createView()));
+        return $this->render('SubspaceCustomerBundle:FrontEnd:signup.html.twig', array('messages' => $NewMessages, 'form' => $form->createView()));
     }
 
 
@@ -102,26 +102,6 @@ class DefaultController extends Controller
         $NewMessages = $Messages->findUserMessages($user_id);         
         // Load the template
         return $this->render('SubspaceCustomerBundle:FrontEnd:pricing.html.twig', array('messages' => $NewMessages));
-    }
-
-    /**
-     * Matches /login exactly
-     *
-     * @Route("/login")
-     */
-
-    public function loginAction(Request $request)
-    {
-        // Get the global Doctrine Manager
-        $em = $this->getDoctrine()->getManager();
-        // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
-        // Fake User ID for now
-        $user_id = 1;
-        // Get messages from Database
-        $NewMessages = $Messages->findUserMessages($user_id); 
-        // Load the template
-        return $this->render('SubspaceCustomerBundle:FrontEnd:login.html.twig', array('messages' => $NewMessages));
     }
 
     /**
