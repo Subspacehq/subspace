@@ -21,3 +21,11 @@ login:
 signup:
     path:      "/signup"
     defaults:  { _controller: SubspaceCustomerBundle:Default:signup }
+
+forgottenpassword:
+    path:      "/forgottenpassword"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:forgottenpassword }
+
+resetpassword:
+    path:      "/resetpassword"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:resetpassword }

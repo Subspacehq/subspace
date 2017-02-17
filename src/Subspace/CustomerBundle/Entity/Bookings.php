@@ -1,5 +1,5 @@
 <?php 
-// src/Subspace/CustomerBundle/Entity/Booking.php
+// src/Subspace/CustomerBundle/Entity/Bookings.php
 
 namespace Subspace\CustomerBundle\Entity;
 
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="bookings")
 */
-class Booking
+class Bookings
 {
 	/**
 	 * @ORM\Column(type="integer", unique=true)

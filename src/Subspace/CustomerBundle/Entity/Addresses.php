@@ -1,5 +1,5 @@
 <?php 
-// src/Subspace/CustomerBundle/Entity/Address.php
+// src/Subspace/CustomerBundle/Entity/Addresses.php
 
 namespace Subspace\CustomerBundle\Entity;
 
@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity
  * @ORM\Table(name="addresses")
 */
-class Address
+class Addresses
 {
     /**
 	 * @ORM\Column(type="integer", unique=true)

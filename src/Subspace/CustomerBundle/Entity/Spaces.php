@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="spaces")
- * @ORM\Entity(repositoryClass="Subspace\CustomerBundle\Repository\SpaceRepository")
+ * @ORM\Entity(repositoryClass="Subspace\CustomerBundle\Repository\SpacesRepository")
 */
-class Space
+class Spaces
 {
 	/**
 	 * @ORM\Column(type="integer", unique=true)

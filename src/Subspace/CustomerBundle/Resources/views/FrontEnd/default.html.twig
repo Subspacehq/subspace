@@ -48,7 +48,7 @@
 									<li><a href="{{ path('root') }}">Dashboard</a></li>
 									<li><a href="{{ path('root') }}">Profile</a></li>
 									<li><a href="{{ path('root') }}">Bookings</a></li>
-									<li><a href="{{ path('root') }}">Messages</a></li>
+									<li><a href="{{ path('root') }}">Messages {% if messages %}[{{messages|length}}]{% endif %}</a></li>
 									<li><a href="{{ path('root') }}">Settings</a></li>
 									<li role="separator" class="divider"></li>
 									<li><a href="{{ path('root') }}">Manage Spaces</a></li>
