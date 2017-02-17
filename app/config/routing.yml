@@ -29,3 +29,7 @@ forgottenpassword:
 resetpassword:
     path:      "/resetpassword"
     defaults:  { _controller: SubspaceCustomerBundle:Default:resetpassword }
+
+profile:
+    path:      "/profile"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:profile }

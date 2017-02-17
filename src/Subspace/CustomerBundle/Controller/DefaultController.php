@@ -162,4 +162,23 @@ class DefaultController extends Controller
         // Load the template
         return $this->render('SubspaceCustomerBundle:FrontEnd:resetpassword.html.twig', array('messages' => $NewMessages));
     }
+
+    /**
+     * Matches /profile exactly
+     *
+     * @Route("/profile")
+     */
+    public function profileAction(Request $request)
+    {
+        // Get the global Doctrine Manager
+        $em = $this->getDoctrine()->getManager();
+        // Load Spaces Doctrine Reporitory 
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        // Fake User ID for now
+        $user_id = 1;
+        // Get messages from Database
+        $NewMessages = $Messages->findUserMessages($user_id); 
+        // Load the template
+        return $this->render('SubspaceCustomerBundle:FrontEnd:profile.html.twig', array('messages' => $NewMessages));
+    }
 }
