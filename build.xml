@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Set some basic project information and targets -->
-<project name="Subspace Build Script" default="build">
+<project name="Subspace Build Script" default="build" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
-<target name="build" depends="initial-checks, clean, prepare, composer.install, dbupdate, lint, phpunit"/>
-<target name="build-dev" depends="initial-checks, clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
+<target name="build" depends="clean, prepare, composer.install, dbupdate, lint, phpunit"/>
+<target name="build-dev" depends="clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-local" depends="git-pull, composer.install, dbupdate"/>
-<target name="build-localandtest" depends="phpunit"/>
-<!-- git-pull, composer.install, dbupdate, clean, prepare, -->
+<target name="build-localandtest" depends="prepare, git-pull, composer.install, dbupdate, phpunit"/>
+<!-- git-pull, composer.install, dbupdate, clean, prepare, phpunit -->
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -24,16 +24,6 @@
    <echo message="Git pull complete.............................. [COMPLETE]" />
 </target>
 
-<!-- Begin file checks -->
-<target name="file-checks">
-   <available file="${location.vendor}"  property="property.newinstall"/>
-</target>
-
-<!-- Perform Install checks -->
-<target name="initial-checks" depends="file-checks">
-   <mkdir dir="${location.vendor}"/>
-</target>
-
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">
   <echo message="Clean-up of previous build artefacts .......... [STARTED]" />
@@ -43,35 +33,65 @@
  </target>
 
 <!-- Prepare for the new build --> 
- <target name="prepare" depends="clean" description="Prepare for build">
-  <echo message="Preparing for new build artefacts ............. [STARTED]" />  
-  <mkdir dir="${location.vendor}"/>
-  <echo message="Vendor directory created ...................... [OK]" />
-  <mkdir dir="${location.vendor.bin}"/>
-  <echo message="Vendor Executable directory created ........... [OK]" />
-  <mkdir dir="${location.build}"/>
-  <echo message="Build directory created ....................... [OK]" />
-  <mkdir dir="${location.build.phpunit}"/>
-  <echo message="PHPUnit Test Output directory created ......... [OK]" />
-  <echo message="Preparing for new build artefacts ............. [COMPLETE]" />
+ <target name="prepare" description="Prepare for build">
+  <echo message="Preparing for new build artefacts ............. " />
+
+  <!-- Check Vendor Directory exists --> 
+  <condition property="location.vendor.exists">
+    <resourceexists>
+      <file file="${location.vendor}"/>
+    </resourceexists>
+  </condition>
+  <mkdir dir="${location.vendor}" unless:true="${location.vendor.exists} "/>
+  <echo message="Vendor directory created ...................... [OK]" unless:true="${location.vendor.exists}" />
+  <echo message="Vendor directory already exists ............... [OK]" if:true="${location.vendor.exists}" /> 
+
+  <!-- Check Vendor Bin Directory exists --> 
+  <condition property="location.vendor.bin.exists">
+    <resourceexists>
+      <file file="${location.vendor.bin}"/>
+    </resourceexists>
+  </condition>
+  <mkdir dir="${location.vendor.bin}" unless:true="${location.vendor.bin.exists} "/>
+  <echo message="Vendor Bin directory created .................. [OK]" unless:true="${location.vendor.bin.exists}" />  
+  <echo message="Vendor Bin directory already exists ........... [OK]" if:true="${location.vendor.bin.exists}" /> 
+
+  <!-- Check Build Directory exists --> 
+  <condition property="location.build.exists">
+    <resourceexists>
+      <file file="${location.build}"/>
+    </resourceexists>
+  </condition>
+  <mkdir dir="${location.build}" unless:true="${location.build.exists} "/>
+  <echo message="Build directory created ....................... [OK]" unless:true="${location.build.exists}" />  
+  <echo message="Build directory already exists ................ [OK]" if:true="${location.build.exists}" /> 
+
+  <!-- Check Build Directory exists --> 
+  <condition property="location.build.phpunit.exists">
+    <resourceexists>
+      <file file="${location.build.phpunit}"/>
+    </resourceexists>
+  </condition>
+  <mkdir dir="${location.build.phpunit}" unless:true="${location.build.phpunit.exists} "/>
+  <echo message="PHPUnit directory created ..................... [OK]" unless:true="${location.build.phpunit.exists}" />  
+  <echo message="PHPUnit directory already exists .............. [OK]" if:true="${location.build.phpunit.exists}" /> 
+
+  <!-- Check to see if COmposer is already installed --> 
+  <condition property="composer.exists">
+    <resourceexists>
+      <file file="${location.composer}"/>
+    </resourceexists>
+  </condition>
+  <echo message="Composer is already present.................... [OK]" if:true="${composer.exists}" />
+  <echo message="Composer is not present, setting download...... [FAIL]" unless:true="${composer.exists}" />
+
+  <!-- Download Composer -->
+  <get src="https://getcomposer.org/composer.phar" dest="${location.composer}" unless:true="${composer.exists}"/>
+  <echo message="Downloaded Composer ........................... [OK]" unless:true="${composer.exists}" />
  </target>
 
-<!-- Check to see if Composer is downloaded -->
-<target name="composer-check" depends="prepare">
-  <echo message="Checking for presence of Composer file......... [STARTED]" />
-  <available file="${location.composer}" property="composer.present"/>
-  <echo message="Checking for presence of Composer file......... [COMPLETE]" />
-  </target>
-
-<!-- Download Composer -->
-<target name="composer-download" depends="composer-check" unless="composer.present">
-  <echo message="Downloading Composer .......................... [STARTED]" />
-  <property name="composer.noselfupdate" value="true"/>
-  <get src="https://getcomposer.org/composer.phar" dest="${location.composer}"/>
-  <echo message="Downloading Composer .......................... [COMPLETE]" />
-</target>
   
-<target name="composer-selfupdate" depends="composer-download" unless="composer.noselfupdate">
+<target name="composer-selfupdate">
   <echo message="Updating Composer ............................. [STARTED]" />
   <exec executable="php">
     <arg value="${location.composer}"/>
