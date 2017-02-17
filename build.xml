@@ -4,7 +4,7 @@
 
 <target name="build" depends="initial-checks, clean, prepare, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-dev" depends="initial-checks, clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
-<target name="build-local" depends="git-checkout, composer.install, dbupdate"/>
+<target name="build-local" depends="git-pull, composer.install, dbupdate"/>
 <!-- <target name="build-local" depends="git-checkout, composer.update, dbupdate"/> -->
 
 <property environment="env"/>
@@ -15,12 +15,12 @@
 <property name="location.build.phpunit" value="${basedir}/build/phpunit"/>
 
 <!-- Begin file checks -->
-<target name="git-checkout">
-   <echo message="Initiating Git checkout of latest code......... [STARTED]" />
+<target name="git-pull">
+   <echo message="Initiating Git pull of latest code............. [STARTED]" />
    <exec executable="git">
-    <arg value="checkout"/>
+    <arg value="pull"/>
    </exec>
-   <echo message="Git checkout complete.......................... [COMPLETE]" />
+   <echo message="Git pull complete.............................. [COMPLETE]" />
 </target>
 
 <!-- Begin file checks -->
