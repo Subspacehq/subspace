@@ -5,7 +5,8 @@
 <target name="build" depends="initial-checks, clean, prepare, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-dev" depends="initial-checks, clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-local" depends="git-pull, composer.install, dbupdate"/>
-<!-- <target name="build-local" depends="git-checkout, composer.update, dbupdate"/> -->
+<target name="build-localandtest" depends="phpunit"/>
+<!-- git-pull, composer.install, dbupdate, clean, prepare, -->
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -141,7 +142,8 @@
   </condition>
   <echo message="Environment is ${os.name} therefore executable set to ${phpunit-executable}." />
   <exec dir="${basedir}" executable="${phpunit-executable}" failonerror="false" description="Run unit app with PHPUnit">
-    <arg value="--verbose" /> 
+    <arg value="--verbose" />
+    <arg value="--coverage-html=${location.build.phpunit}" />
   </exec>
   <echo message="Running PHPUnit ............................... [COMPLETE]" />
  </target>
