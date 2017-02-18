@@ -1,3 +1,5 @@
+/* Dashboard Nav Sub Menu */
+
 .account-main{
   margin-top: 50px;
 }
@@ -25,6 +27,9 @@
   color: #f05f5a;
   font-weight: 400;
 }
+
+/* End.Dashboard Nav Sub Menu */
+/* General + Profile Page Styling */
 
 .account-main .form-horizontal{
   padding: 20px 50px 20px 20px;
@@ -82,5 +87,128 @@
 
 .image-upload > input
 {
-    display: none;
+  display: none;
 }
+
+/* End.General + Profile Page Styling */
+/* Manage Listings Styling - Listing Page */
+
+.manage-space-info{
+  padding:40px;
+  height: 150px;
+  background: #ECECEC;
+  margin-bottom: 20px;
+}
+
+.btn-new{
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  background-color: #f05f5a;
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #C24D49;
+  padding: 13px 0;
+  font-size: 17px;
+}
+
+.btn-new:hover{
+  color: #FFF;
+  background-color: #DE5853;
+  transition: background-color 0.5s ease;
+}
+
+.manage-space-info .btn-new{
+  margin-top: 10px;
+}
+
+.manage-space-info p{
+  width: 90%;
+}
+
+.your-space{
+  height:120px;
+  border: 1px solid #ECECEC;
+  padding: 5px 5px 0 5px;
+  margin-bottom: 15px;
+}
+
+.your-space-img{
+  height: 104%;
+  margin-bottom: -5px;
+}
+
+.your-space-img img{
+  height:100%;
+  padding: -5px;
+  margin-top: -5px;
+  margin-left: -20px;
+}
+
+.your-space-name{
+  padding-top: 30px;
+}
+
+.your-space-name .name{
+  font-weight: bold;
+}
+
+.your-space-links{
+  padding-top: 40px;
+}
+
+.status-draft{
+  border: 1px solid #f05f5a;
+  color: #f05f5a;
+  padding-top:3px;
+  padding-bottom: 3px;
+  border-radius: 3px;
+  width: 60%;
+  margin-left: auto;
+  text-align: center;
+}
+
+.status-active{
+  border: 1px solid #5FB27C;
+  color: #5FB27C;
+  padding-top:3px;
+  padding-bottom: 3px;
+  border-radius: 3px;
+  width: 60%;
+  margin-left: auto;
+  text-align: center;
+}
+
+/* End.Manage Listings Styling - Listing Page */
+/* Manage Listings Styling - Edit Page */
+
+.line-break-master{
+  border-bottom: 1px solid #ECECEC;
+  height: 50px;
+  margin-bottom: 25px;
+  margin-left: -20px;
+  margin-right: -50px
+}
+
+.manage-listing .image-upload{
+  background-color: #ECECEC;
+  border: 3px dashed #777;
+  text-align: center;
+  padding: 50px;
+}
+
+.manage-listing .image-upload label{
+  height: 100%;
+}
+
+.btn-preview{
+  margin-right: 10px;
+}
+
+.edit-listing-btn{
+  margin-top: 20px;
+}
+
+/* End.Manage Listings Styling - Edit Page */

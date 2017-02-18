@@ -1,0 +1,66 @@
+{% extends '@SubspaceCustomerBundle/Resources/views/FrontEnd/default.html.twig' %}
+
+{% block title %}Your Spaces{% endblock %}
+
+{% block mainContainer %}
+<!--- Dash Main --->
+
+<div class="account-main">
+  <div class="container">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 account-nav">
+      <ul>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="bookings.php">Bookings</a></li>
+        <li><a href="listings.php"><span class="active-link">Spaces</span></a></li>
+        <li><a href="messages.php">Messages</a></li>
+        <li><a href="settings.php">Settings</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+      <div class="manage-space-info"><!--- Section Header --->
+        <div class="pull-left col-lg-6">
+          <h2>Your Spaces</h2>
+          <p>Use this area to create new spaces, manage existing spaces and control availablility</p>
+        </div>
+        <div class="pull-right col-lg-6"><button type="submit" class="btn btn-new">Add Space</button></div>
+      </div><!--- /.Section Header --->
+
+<!--- Account Space List Item --->
+      <div class="your-space">
+        <div class="your-space-img pull-left col-lg-3"><img src="../img/spaces/1.jpg" /></div>
+          <div class="your-space-name pull-left col-lg-4">
+            <p class="name">Space Name</p>
+            <p>Address Line 1, City, Post Code</p>
+          </div>
+            <div class="your-space-links col-lg-3">
+              <div><p class="status-draft ">Draft</p></div>
+            </div>
+        <div class="your-space-links col-lg-2">
+          <div><button type="submit" class="btn btn-main">View Space</button></div>
+        </div>
+      </div>
+<!--- /.Account Space List Item --->
+
+<!--- Account Space List Item --->
+      <div class="your-space">
+        <div class="your-space-img pull-left col-lg-3"><img src="../img/spaces/2.jpg" /></div>
+          <div class="your-space-name pull-left col-lg-4">
+            <p class="name">Space Name</p>
+            <p>Address Line 1, City, Post Code</p>
+          </div>
+            <div class="your-space-links col-lg-3">
+              <div><p class="status-active">Published</p></div>
+            </div>
+        <div class="your-space-links col-lg-2">
+          <div><button type="submit" class="btn btn-main">View Space</button></div>
+        </div>
+      </div>
+<!--- /.Account Space List Item --->
+
+    </div><!--- /.Right Container --->
+  </div><!--- /.Container --->
+</div><!--- /.Account-Main --->
+
+
+{% endblock %}

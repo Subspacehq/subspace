@@ -1,0 +1,394 @@
+{% extends '@SubspaceCustomerBundle/Resources/views/FrontEnd/default.html.twig' %}
+
+{% block title %}Manage Space{% endblock %}
+
+{% block mainContainer %}
+<!--- Dash Main --->
+
+<div class="account-main manage-listing">
+  <div class="container">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 account-nav">
+      <ul>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="bookings.php">Bookings</a></li>
+        <li><a href="listings.php"><span class="active-link">Spaces</span></a></li>
+        <li><a href="messages.php">Messages</a></li>
+        <li><a href="settings.php">Settings</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+
+      <form class="form-horizontal">
+              <h2>Description</h2>
+
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10 form-width">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Give your space a simple name!">
+          </div>
+        </div>
+
+				<div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-10 form-width">
+            <textarea class="form-control" rows="3" placeholder="Descirbe your space"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Space Type</label>
+          <div class="col-sm-10 form-width">
+						<select class="form-control">
+						  <option>Hot Desk</option>
+						  <option>Private Office</option>
+						  <option>Meeting Room</option>
+              <option>Conference Room</option>
+						</select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Space Capacity</label>
+          <div class="col-sm-10 form-width">
+						<select class="form-control">
+						  <option>Solo</option>
+						  <option>Small Group</option>
+						  <option>Large Group</option>
+              <option>Events</option>
+						</select>
+          </div>
+        </div>
+
+<div class="line-break-master"></div>
+
+
+        <h2>Photos</h2>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10 form-width">
+        <div class="image-upload">
+            <label for="file-input">
+                Drag your photo's, or <u>click here</u> to browse
+            </label>
+            <input id="file-input" type="file"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="line-break-master"></div>
+
+
+    <h2>Features</h2>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10 form-width">
+        <div class="checkbox"><label><input type="checkbox" value="">Free Wifi</label></div>
+        <div class="checkbox"><label><input type="checkbox" value="">TV/Projector</label></div>
+        <div class="checkbox"><label><input type="checkbox" value="">Whiteboard</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10 form-width">
+        <div class="checkbox"><label><input type="checkbox" value="">Tea/Coffee Facilities</label></div>
+        <div class="checkbox"><label><input type="checkbox" value="">Kitchen Facilities</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10 form-width">
+        <div class="checkbox"><label><input type="checkbox" value="">Free Parking</label></div>
+        <div class="checkbox"><label><input type="checkbox" value="">Metered Parking</label></div>
+      </div>
+    </div>
+
+
+
+
+<div class="line-break-master"></div>
+
+
+
+        <h2>Location</h2>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Address Line 1</label>
+    <div class="col-sm-10 form-width">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Address Line 1">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Address Line 2</label>
+    <div class="col-sm-10 form-width">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Address Line 2">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Town/City</label>
+    <div class="col-sm-10 form-width">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your Town or City">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">County/State</label>
+    <div class="col-sm-10 form-width">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Enter your County or State">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Country</label>
+    <div class="col-sm-10 form-width">
+      <select class="form-control">
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>Republic Of Ireland</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Directions</label>
+    <div class="col-sm-10 form-width">
+      <textarea class="form-control" rows="3" placeholder="Optional"></textarea>
+    </div>
+  </div>
+
+
+
+<div class="line-break-master"></div>
+
+          <h2>Opening Hours</h2>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Monday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Tuesday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Wednesday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Thursday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Friday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Saturday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Sunday</label>
+            <div class="col-sm-10 form-width">
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+              <div class="col-sm-1"><center>-</center></div>
+              <div class="col-sm-3">
+                <select class="form-control">
+                  <option>Closed</option>
+                  <option>08:00AM</option>
+                  <option>09:00AM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+<div class="line-break-master"></div>
+
+          <h2>Pricing</h2>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Monday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Tuesday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Wednesday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Thursday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Friday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Saturday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Sunday</label>
+            <div class="input-group col-sm-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="00.00" aria-describedby="basic-addon1">
+            </div>
+          </div>
+
+
+<div class="line-break-master"></div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10 edit-listing-btn">
+        <button type="submit" class="btn btn-main">Save Space</button>
+        <button type="submit" class="btn btn-main btn-preview">Preview</button>
+      </div>
+    </div>
+  </form>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
