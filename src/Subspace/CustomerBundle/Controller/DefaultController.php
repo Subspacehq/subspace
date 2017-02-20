@@ -161,4 +161,42 @@ class DefaultController extends Controller
         // Load the template
         return $this->render('SubspaceCustomerBundle:FrontEnd:profile.html.twig', array('messages' => $NewMessages));
     }
+
+    /**
+     * Matches /listings exactly
+     *
+     * @Route("/listings")
+     */
+    public function listingsAction(Request $request)
+    {
+        // Get the global Doctrine Manager
+        $em = $this->getDoctrine()->getManager();
+        // Load Spaces Doctrine Reporitory 
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        // Fake User ID for now
+        $user_id = 1;
+        // Get messages from Database
+        $NewMessages = $Messages->findUserMessages($user_id); 
+        // Load the template
+        return $this->render('SubspaceCustomerBundle:FrontEnd:listings.html.twig', array('messages' => $NewMessages));
+    }
+
+    /**
+     * Matches /editlistings exactly
+     *
+     * @Route("/editlistings")
+     */
+    public function editlistingAction(Request $request)
+    {
+        // Get the global Doctrine Manager
+        $em = $this->getDoctrine()->getManager();
+        // Load Spaces Doctrine Reporitory 
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        // Fake User ID for now
+        $user_id = 1;
+        // Get messages from Database
+        $NewMessages = $Messages->findUserMessages($user_id); 
+        // Load the template
+        return $this->render('SubspaceCustomerBundle:FrontEnd:editlisting.html.twig', array('messages' => $NewMessages));
+    }
 }

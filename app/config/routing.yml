@@ -34,3 +34,11 @@ resetpassword:
 profile:
     path:      "/profile"
     defaults:  { _controller: SubspaceCustomerBundle:Default:profile }
+
+listings:
+    path:      "/listings"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:listings }
+
+editlisting:
+    path:      "/editlisting"
+    defaults:  { _controller: SubspaceCustomerBundle:Default:editlisting }
