@@ -2,7 +2,13 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-## Application ROutes
+## JSON API Routes
+
+api:
+    path: "/json"
+    defaults: { _controller: SubspaceCustomerBundle:Api:index }
+
+## Application Routes
 root:
     path:      "/"
     defaults:  { _controller: SubspaceCustomerBundle:Default:index }
