@@ -6,7 +6,7 @@
 <target name="build-dev" depends="clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-local" depends="git-pull, composer.install, dbupdate"/>
 <target name="build-localandtest" depends="prepare, git-pull, composer.install, dbupdate, phpunit"/>
-<target name="build-travis" depends="clean, prepare, travis-config, dbcreate, composer-selfupdate, composer.install, lint, phpunit"/>
+<target name="build-travis" depends="clean, prepare, travis-config, composer-selfupdate, composer.install, dbcreate, lint, phpunit"/>
 <!-- git-pull, composer.install, dbupdate, clean, prepare, phpunit -->
 
 <property environment="env"/>
