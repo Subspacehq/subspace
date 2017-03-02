@@ -14,8 +14,9 @@ before_script:
   # configure apache virtual hosts
   - sudo cp -f app/config/travis.apache.config /etc/apache2/sites-available/default
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
-  - sudo dir /etc/apache2/sites-available/
+  - sudo curl http://localhost/
   - sudo service apache2 restart
 install: ant build-travis
 notifications:
   slack: subspacehq:c17gPK8pkMQlNchPldCb3QFl
+  email: false
