@@ -19,5 +19,3 @@ before_script:
 install: ant build-travis
 notifications:
   slack: subspacehq:c17gPK8pkMQlNchPldCb3QFl
-    on_success: always
-    on_faliure: always
