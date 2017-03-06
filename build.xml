@@ -6,7 +6,7 @@
 <target name="build-dev" depends="clean, prepare, composer-selfupdate, composer.install, dbupdate, lint, phpunit"/>
 <target name="build-local" depends="git-pull, composer.install, dbupdate"/>
 <target name="build-localandtest" depends="prepare, git-pull, composer.install, dbupdate, phpunit"/>
-<target name="build-travis" depends="clean, prepare, travis-config, composer-selfupdate, composer.install, dbcreate, dbupdate"/>
+<target name="build-travis" depends="clean, prepare, travis-config, composer-selfupdate, composer.install, dbcreate, dbupdate, importtestdata"/>
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
@@ -145,6 +145,17 @@
       <arg value='--force' />
   </exec>
   <echo message="Updating Database ............................. [COMPLETE]" />
+</target>
+
+<!-- Import Test Data --> 
+<target name="importtestdata" description="Import Test Data Fixtures">
+  <echo message="Adding test data to Database .................. [STARTED]" />
+  <exec executable="php" failonerror="true">
+    <arg value='bin/console' />
+      <arg value="doctrine:fixtures:load" />
+      <arg value='--no-interaction' />
+  </exec>
+  <echo message="Adding test data to Database .................. [COMPLETE]" />
 </target>
 
 <!-- Lint the PHP files in app dir. Linting the whole framework library takes forever -->
