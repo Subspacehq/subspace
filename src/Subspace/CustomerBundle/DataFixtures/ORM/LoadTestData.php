@@ -28,7 +28,7 @@ class LoadTestData implements FixtureInterface
             $manager->flush();
         }
 
-        // Load Spaces Data
+        // Load Messages Data
         
         // Parse the Spaces test data file into an array
         $MessagesCsv = array_map('str_getcsv', file(__DIR__.'/Messages.csv'));
@@ -49,6 +49,27 @@ class LoadTestData implements FixtureInterface
             $Message->setStatus($row_array[5]);
             $Message->setTimeRead($TimeRead);
             $manager->persist($Message);
+            $manager->flush();
+        }
+
+        // Load Addresses Data
+        
+        // Parse the Spaces test data file into an array
+        $AddressesCsv = array_map('str_getcsv', file(__DIR__.'/Addresses.csv'));
+        // Remove initial array item as it is just the row names
+        unset($AddressesCsv[0]);
+        // Loop through the rows and add them to the database
+        foreach ($AddressesCsv as $row => $row_array)
+        {          
+            $Address = new Address();
+            $Address->setHouseNumber($row_array[0]);
+            $Address->setAddressLine1($row_array[1]);
+            $Address->setAddressLine2($row_array[2]);
+            $Address->setAddressLine3($row_array[3]);
+            $Address->setCity($row_array[4]);
+            $Address->setPostcode($row_array[5]);
+            $Address->setCountryId($row_array[6]);
+            $manager->persist($Address);
             $manager->flush();
         }
     }
