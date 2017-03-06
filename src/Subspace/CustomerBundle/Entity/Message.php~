@@ -184,4 +184,52 @@ class Message
     {
         return $this->TimeReceived;
     }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return Message
+     */
+    public function setStatus($status)
+    {
+        $this->Status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->Status;
+    }
+
+    /**
+     * Set timeRead
+     *
+     * @param \DateTime $timeRead
+     *
+     * @return Message
+     */
+    public function setTimeRead($timeRead)
+    {
+        $this->TimeRead = $timeRead;
+
+        return $this;
+    }
+
+    /**
+     * Get timeRead
+     *
+     * @return \DateTime
+     */
+    public function getTimeRead()
+    {
+        return $this->TimeRead;
+    }
 }

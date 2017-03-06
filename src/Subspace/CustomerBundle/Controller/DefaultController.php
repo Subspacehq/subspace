@@ -8,7 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Spaces;
+use AppBundle\Entity\Space;
+use AppBundle\Entity\Message;
 
 class DefaultController extends Controller
 {
@@ -20,7 +21,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -50,7 +51,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -75,7 +76,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -95,7 +96,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -115,7 +116,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -134,7 +135,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -153,7 +154,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -172,7 +173,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database
@@ -191,7 +192,7 @@ class DefaultController extends Controller
         // Get the global Doctrine Manager
         $em = $this->getDoctrine()->getManager();
         // Load Spaces Doctrine Reporitory 
-        $Messages = $em->getRepository('SubspaceCustomerBundle:Messages');
+        $Messages = $em->getRepository('SubspaceCustomerBundle:Message');
         // Fake User ID for now
         $user_id = 1;
         // Get messages from Database

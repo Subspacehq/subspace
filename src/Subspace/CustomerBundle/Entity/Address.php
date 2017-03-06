@@ -1,5 +1,5 @@
 <?php 
-// src/Subspace/CustomerBundle/Entity/Addresses.php
+// src/Subspace/CustomerBundle/Entity/Address.php
 
 namespace Subspace\CustomerBundle\Entity;
 
@@ -10,14 +10,14 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Entity
  * @ORM\Table(name="addresses")
 */
-class Addresses
+class Address
 {
     /**
 	 * @ORM\Column(type="integer", unique=true)
-	 * @ORM\Id
+     * @ORM\Id
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	private $Id;
+	private $id;
 
     /**  
      * @ORM\Column(type="integer")
@@ -270,5 +270,19 @@ class Addresses
     public function getCountryId()
     {
         return $this->CountryId;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return Address
+     */
+    public function setId($id)
+    {
+        $this->Id = $id;
+
+        return $this;
     }
 }

@@ -10,7 +10,7 @@ class MessagesRepository extends EntityRepository
     {
         $query = $this->getEntityManager()
         ->createQuery(
-            'SELECT m FROM SubspaceCustomerBundle:Messages m WHERE m.SentToId = '.$user_id);
+            'SELECT m FROM SubspaceCustomerBundle:Message m WHERE m.SentToId = '.$user_id);
 	    try {
 	        return $query->getResult();
 	    } catch (\Doctrine\ORM\NoResultException $e) {
