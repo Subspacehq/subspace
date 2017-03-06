@@ -15,7 +15,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Home Page is UP.');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), '[FAIL] Home Page is not returning a 200 response.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 
@@ -25,7 +25,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/locations');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Location Page is UP.');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), '[FAIL] Home Page is not returning a 200 response.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 
@@ -35,7 +35,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/tour');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), '[FAIL] Tour Page is not returning a 200 response.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 
@@ -45,7 +45,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/pricing');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), '[FAIL] Pricing Page is not returning a 200 response.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
  
@@ -53,9 +53,9 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/pricing');
+        $crawler = $client->request('GET', '/forgottenpassword');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), '[FAIL] Forgotten Password Page is not returning a 200 response.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 

@@ -57,7 +57,7 @@ class DefaultController extends Controller
         // Get messages from Database
         $NewMessages = $Messages->findUserMessages($user_id);  
         // Load Spaces Doctrine Reporitory 
-        $SpacesRepository = $em->getRepository('SubspaceCustomerBundle:Spaces');
+        $SpacesRepository = $em->getRepository('SubspaceCustomerBundle:Space');
         // Query to get all spaces
         $spaces = $SpacesRepository->findAllSpaces(); 
 
