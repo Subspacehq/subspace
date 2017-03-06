@@ -5,7 +5,7 @@ namespace Tests\Subspace\CustomerBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\Yaml\Exception\ParseException as Yaml;
+use Symfony\Component\Yaml\Exception\ParseException;
 
 class DefaultControllerTest extends WebTestCase
 {
@@ -64,7 +64,7 @@ class DefaultControllerTest extends WebTestCase
         //$yaml = new Yaml();
         
         try {
-            $value = Yaml::parse(file_get_contents(__DIR__.'/../../../app/config/routing.yml'));
+            //$value = Yaml::parse(file_get_contents(__DIR__.'/../../../app/config/routing.yml'));
         } 
         catch (ParseException $e) 
         {
