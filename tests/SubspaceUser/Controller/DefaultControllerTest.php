@@ -15,7 +15,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Home Page is UP.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 
@@ -25,7 +25,7 @@ class DefaultControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/locations');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Location Page is UP.');
         //$this->assertContains('Get Started Today', $crawler->filter('.register-form h1')->text());
     }
 

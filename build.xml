@@ -7,6 +7,7 @@
 <target name="build-local" depends="git-pull, composer.install, dbupdate"/>
 <target name="build-localandtest" depends="prepare, git-pull, composer.install, dbupdate, phpunit"/>
 <target name="build-travis" depends="clean, prepare, travis-config, composer-selfupdate, composer.install, dbcreate, dbupdate, importtestdata"/>
+<target name="test" depends="lint, phpunit"/>
 
 <property environment="env"/>
 <property name="location.vendor" value="${basedir}/vendor"/>
